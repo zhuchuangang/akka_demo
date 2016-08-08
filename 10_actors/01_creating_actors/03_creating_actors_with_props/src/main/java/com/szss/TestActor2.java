@@ -17,7 +17,6 @@ public class TestActor2 extends UntypedActor {
     public void onReceive(Object message) throws Exception {
         if (message instanceof String){
             System.out.println("TestActor2 message is "+message+",This Class name is "+name);
-            getSender().tell("close",getSelf());
         }
     }
 }

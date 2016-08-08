@@ -12,11 +12,14 @@ public class MyUntypedActor extends UntypedActor {
     final ActorRef testActor1=getContext().actorOf(props1);
     final Props props2=Props.create(TestActor2.class,"TestActor2");
     final ActorRef testActor2=getContext().actorOf(props2);
+    final Props props3=Props.create(new TestActor3.TestActorCreator());
+    final ActorRef testActor3=getContext().actorOf(props3);
 
     @Override
     public void preStart() throws Exception {
         testActor1.tell("Test1",getSelf());
         testActor2.tell("Test2",getSelf());
+        testActor3.tell("Test3",getSelf());
     }
 
     @Override
@@ -26,6 +29,7 @@ public class MyUntypedActor extends UntypedActor {
             if ("close".equals(message)){
                 getContext().stop(testActor1);
                 getContext().stop(testActor2);
+                getContext().stop(testActor3);
             }
         }
     }
