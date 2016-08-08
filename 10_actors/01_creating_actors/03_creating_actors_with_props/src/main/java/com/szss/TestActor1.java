@@ -10,6 +10,8 @@ public class TestActor1 extends UntypedActor {
     public void onReceive(Object message) throws Exception {
         if (message instanceof String){
             System.out.println("TestActor1 message is "+message);
+        }else {
+            unhandled(message);
         }
     }
 }

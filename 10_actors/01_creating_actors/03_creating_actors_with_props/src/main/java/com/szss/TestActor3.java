@@ -18,7 +18,8 @@ public class TestActor3 extends UntypedActor{
     public void onReceive(Object message) throws Exception {
         if (message instanceof String){
             System.out.println("TestActor3 message is "+message+",count is "+count);
-            getSender().tell("close",getSelf());
+        }else {
+            unhandled(message);
         }
 
     }

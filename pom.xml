@@ -5,12 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.szss</groupId>
-    <artifactId>hello-world-akka</artifactId>
+    <artifactId>akka_demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>01_hello_world_akka</module>
         <module>10_actors/01_creating_actors/01_defining_an_actor_class</module>
+        <module>10_actors/01_creating_actors/05_inbox</module>
     </modules>
 
     <properties>
